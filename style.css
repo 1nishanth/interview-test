@@ -1,0 +1,294 @@
+/* Reset Default Margins */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container Styles */
+.container {
+    background-color: #fff;
+    border-radius: 8px;
+    /* max-width: 465px; */
+    max-width: 480px;
+    width: 100%;
+    padding: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+.title {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: #ff6584;
+    font-size: 18px;
+    padding-bottom: 20px;
+}
+
+.title::before,
+.title::after {
+    content: '';
+    flex: 1;
+    border-top: 1px solid #ccc;
+    margin: 0 10px;
+}
+
+
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+/* Options */
+.option {
+    border: 1px solid #ddd;
+    padding: 10px 15px 10px 15px;
+    margin: 10px 0;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    margin-bottom: 30px;
+}
+
+.option.active {
+    background-color: #ffebef;
+    border-color: #ff6584;
+    box-shadow: 0 0 8px rgba(255, 101, 132, 0.4);
+}
+
+.option:last-child {
+    margin-bottom: 0px;
+}
+
+/* .radio-btn {
+    margin-right: 15px;
+} */
+
+.radio-btn {
+    margin-right: 15px;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+
+.radio-btn:checked {
+    border-color: #ff6584;
+}
+
+.radio-btn:checked::after {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    background: #ff6584;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.option-content {
+    width: 100%;
+}
+
+.option-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.discount {
+    background-color: #ff6584;
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+
+.popular {
+    position: absolute;
+    top: -11.5px;
+    right: 4px;
+    background-color: #ff6584;
+    color: #fff;
+    font-size: 12px;
+    padding: 5px 8px;
+    border-radius: 2px;
+    font-weight: bold;
+    margin-left: 20px;
+    width: 120px;
+    z-index: 1 !important;
+}
+
+.popular::before,
+.popular::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    border-style: solid;
+
+    /* border-width: 10px 10px 0px 10px; */
+    border-width: 0px 10px 10px 10px;
+    /* Triangle shape */
+    border-color: transparent transparent #d94d68 transparent;
+    width: 0;
+    height: 0;
+
+}
+
+.popular::before {
+    left: -10px;
+}
+
+/* Right Triangle */
+.popular::after {
+    right: -10px;
+}
+
+.standard-price {
+    font-size: 14px;
+    color: grey;
+    margin-top: 4px;
+}
+
+.price {
+    display: flex;
+    flex-direction: column;
+    color: #333;
+    margin-top: 14px;
+}
+
+.price del {
+    color: #aaa;
+    font-size: 12px;
+}
+
+.item-price-data {
+    font-size: 12.5px;
+    margin-top: -10px;
+}
+
+/* Size & Colour Select */
+.select-group {
+    display: none;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.option.active .select-group {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.select-group div {
+    display: flex;
+    flex-direction: column;
+}
+
+.select-group .set-number {
+    margin-right: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.select-group label {
+    font-size: 12px;
+    color: #333;
+}
+
+select {
+    width: 100px;
+    /* Make the dropdown smaller */
+    padding: 3px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    appearance: none;
+    /* Removes default dropdown styling */
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23000000' viewBox='0 0 24 24' width='18px' height='18px' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 5px center;
+    background-size: 12px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Footer */
+.footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.footer-left {
+    display: flex;
+    float: left;
+}
+
+.footer-right {
+    display: flex;
+    float: right;
+}
+
+.free-delivery {
+    color: #ff5280;
+}
+
+.total {
+    display: block;
+    margin-top: 2px;
+    font-size: 1rem;
+    float: right !important;
+    padding-bottom: 20px;
+}
+
+.add-to-cart {
+    background-color: #ff5280;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    background-color: #e04672;
+}
+
+.copyright {
+    float: right;
+    font-style: italic;
+    font-size: 12px;
+    color: lightgrey;
+    padding: 10px 0px;
+}
